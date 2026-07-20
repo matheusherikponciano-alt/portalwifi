@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Portal Wi-Fi TRUE</title>
+</head>
+
+<body>
+
+<h1>Portal Wi-Fi TRUE</h1>
+
+<form method="POST">
+
+    <label>Nome:</label><br>
+    <input type="text" name="nome" required><br><br>
+
+    <label>CPF:</label><br>
+    <input type="text" name="cpf" required><br><br>
+
+    <label>E-mail:</label><br>
+    <input type="email" name="email" required><br><br>
+
+    <label>Telefone:</label><br>
+    <input type="text"
+           name="telefone"
+           placeholder="Ex: (00) 00000-0000"
+           required><br><br>
+
+    <label>CEP:</label><br>
+    <input type="text"
+           name="cep"
+           placeholder="Ex: 00000-000"
+           required><br><br>
+
+    <label>Rua / Nº:</label><br>
+    <input type="text"
+           name="rua"
+           placeholder="Ex: Rua das Flores, 123"
+           required><br><br>
+
+    <label>Bairro:</label><br>
+    <input type="text"
+           name="bairro"
+           placeholder="Ex: Centro"
+           required><br><br>
+
+    <label>Cidade:</label><br>
+    <input type="text"
+           name="cidade"
+           placeholder="Ex: Eusébio"
+           required><br><br>
+
+    <input type="checkbox" id="termos" required>
+    <label for="termos">Aceito os termos e condições</label>
+
+    <br><br>
+
+    <button id="btnConfirmar"
+            type="button"
+            onclick="liberarConfirmacao()">
+        Confirmar
+    </button>
+
+    <br><br>
+
+    <button id="btnSegui"
+            type="button"
+            onclick="confirmouSeguimento()"
+            style="display:none;">
+        Já segui a AMT
+    </button>
+
+    <br><br>
+
+    <button id="btnLiberar"
+            type="submit"
+            style="display:none;">
+        Liberar acesso ao Wi-Fi
+    </button>
+
+</form>
+
+<script>
+
+function liberarConfirmacao(){
+
+    if(!document.getElementById("termos").checked){
+        alert("Você precisa aceitar os termos e condições.");
+        return;
+    }
+
+    window.open("https://www.instagram.com/amt_eusebio/", "_blank");
+
+    document.getElementById("btnConfirmar").style.display = "none";
+
+    document.getElementById("btnSegui").style.display = "inline-block";
+}
+
+function confirmouSeguimento(){
+
+    document.getElementById("btnSegui").style.display = "none";
+
+    document.getElementById("btnLiberar").style.display = "inline-block";
+
+}
+
+</script>
+
+</body>
+</html>
