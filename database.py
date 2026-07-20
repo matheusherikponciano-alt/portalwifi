@@ -1,10 +1,11 @@
 import mysql.connector
 
 conexao = mysql.connector.connect(
-    host="localhost",
+    host="shuttle.proxy.rlwy.net",
+    port=43070,
     user="root",
-    password="",
-    database="wifi_true"
+    password="opjBKVJFKIcoGcprRlrBrXQsrDoKPHiW",
+    database="railway"
 )
 
 cursor = conexao.cursor()
